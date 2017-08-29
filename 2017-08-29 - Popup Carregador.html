@@ -1,0 +1,402 @@
+<style type="text/css">
+#popupCarregador_Background {
+	display: none; 
+    position: fixed;
+    z-index: 2147483646;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+#popupCarregador_Conteudo {
+    max-width: 80%;
+    min-width: 320px;
+    position: relative;
+    top: 10%;
+    margin: auto;
+    padding-bottom: 20px;
+    background-color: white;
+    color: rgba(0,0,0,0.4);
+    z-index: 2147483647;
+}
+#divCloseButton {
+	position: relative;
+    float: right;
+    top: -15px;
+    right: -15px;
+    background-color: #000;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+#closeButton {
+    color: #FFF;
+    font-size: 22pt;
+    text-align: center;
+    display: block;
+}
+#contentCarregadorPopup{
+	padding: 0px 45px 5px 45px;
+	color: rgba(0,0,0,0.4);
+}
+#titlePopup {
+	padding-bottom: 15px;
+    padding-top: 30px;
+    margin: 0px 45px 0px 45px;
+    text-align: center;
+    color: #6A1685;
+}
+#imgCarregadorPopup {
+    display: inline-block;
+}
+#buttonsContent {
+    float: right;
+    padding: 15px;
+    width: 59%;
+}
+#calcPrices {
+	font-size: 18px;
+    width: 100%;
+    clear: both;
+    padding: 0px 45px 95px;
+}
+#priceTitle #priceVar {
+	display: inline-block;
+}
+#titleCarregador {
+	display: inline-block;
+}
+#priceTitle {
+}
+#calcPrices p {
+    text-align: right;
+    height: 24px;
+}
+#writeContent {
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
+    float: none;
+}
+#confirmPopup {
+    display: block;
+    float: right;
+    width: 250px;
+    margin: 20px 60px 5px 60px;
+    font-size: 20px;
+    background: #2de64e;
+    height: 45px;
+    line-height: 37px;
+    color: #FFFFFF;
+    font-family: 'Bree Serif',serif;
+    border-radius: 5px;
+}
+.priceRight {
+    padding: 6px;
+    display: inline-block;
+    float: right;
+    text-align: right;
+}
+.btCarregador {
+	padding: 5px;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 5px;
+	margin-top: 20px;	
+}
+.btCarregador p {
+	margin: 7px;
+}
+.breePopup {
+    font-family: 'Bree Serif',serif;
+}
+.subTitleCarregador {
+	font-size: 14px;
+}
+.calcPricesRight {
+    display: inline-block;
+    float: right;
+    margin-right: 15px;
+}
+.buttonOption {
+    margin: 12px;
+    padding: 2px;
+    float: left;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    background-color: #FFFFFF;
+}
+.selected_Text {
+	color: #6A1685;
+}
+.selected_Border {
+	border: 1px solid #6A1685;
+}
+.buttonOptionInside{
+	background-color: #FFFFFF;
+	border-radius: 50%;
+    height: 12px;
+    width: 12px;
+    margin: auto;
+}
+.clearfixPopup {
+	clear: both;
+}
+#divCloseButton:hover, .btCarregador:hover {
+	cursor: pointer;
+}
+@media (min-width: 1000px) {
+	#popupCarregador_Conteudo {
+    	width: 900px;
+	}
+	.buttonOption {
+    	padding: 2px;
+    }
+}
+@media (max-width: 882px) {
+	#popupCarregador_Background {
+		overflow-y: auto;
+	}
+	#popupCarregador_Conteudo {
+		margin-bottom: 10%;
+	}
+	#titleQuero, #titleNaoQuero {
+		text-align: center;
+	    margin: 5px auto;
+	}
+	.subTitleCarregador, .buttonOption {
+		display: none;
+	}
+	#imgCarregadorPopup, #buttonsContent {
+		display: block;
+		margin: auto;
+	}
+	#buttonsContent {
+		width: 100%;
+	}
+}
+@media (max-width: 479px) {
+	#imgCarregadorPopup {
+		width: 90%;
+	}
+	#calcPrices {
+		display: none;
+	}
+	#confirmPopup {
+	    max-width: 63%;
+	}
+	#divCloseButton {
+    	right: 20px;
+    }
+}
+</style>
+
+<div id="popupCarregador_Background">
+	<div id="popupCarregador_Conteudo">
+
+		<div id="divCloseButton">
+			<span id="closeButton">&times;</span>
+		</div>
+
+		<h1 id="titlePopup" class="breePopup">Compre também o Kit Carregador</h1>
+
+		<div id="contentCarregadorPopup">
+
+			<img id="imgCarregadorPopup" src="https://checkout.maisbaratostore.com.br/recursos/i/carregador_popup.png"/>
+
+			<div id="buttonsContent">
+
+				<p>Aproveite e compre também um Kit Carregador para o seu aparelho. O Kit contém um carregador alternativo, com fonte e cabo USB</p>
+
+				<div class="btCarregador" id="btQuero">
+
+					<div class="buttonOption"><div class="buttonOptionInside"></div></div>
+
+					<div id="priceWant" class="breePopup priceRight"></div>
+
+					<div id="writeContentQuero">
+						<p id="titleQuero" class="breePopup titleCarregador">Quero comprar o Kit Carregador</p>
+						<p class="subTitleCarregador">Desejo receber junto com o meu aparelho o Kit Carregador</p>
+					</div>
+
+					<div class="clearfixPopup"></div>
+				</div>
+
+				<div class="btCarregador" id="btNaoQuero">
+
+					<div class="buttonOption"><div class="buttonOptionInside"></div></div>
+
+					<div class="breePopup priceRight">R$ 0,00</div>
+
+					<div id="writeContentNaoQuero">
+						<p id="titleNaoQuero" class="breePopup titleCarregador">Não quero</p>
+						<p class="subTitleCarregador">Não quero o Kit Carregador para esse aparelho</p>
+					</div>
+
+					<div class="clearfixPopup"></div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="clearfixPopup"></div>
+
+		<button id="confirmPopup">CONTINUAR</button>
+
+		<div class="clearfixPopup"></div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	(function() {
+		var produtosPos = Fbits.Carrinho.ListaProdutos.split(';');
+		var produtosObj = Fbits.Carrinho.ProdutoVariante;
+		var haveCharger = false;
+
+		for (var i = 0; i < produtosPos.length; i++) {
+			if(produtosObj[produtosPos[i]].Nome.indexOf('Carregador') != -1 || (produtosObj[produtosPos[i]].Nome.indexOf('IPHONE 4 ') != -1 ||
+							produtosObj[produtosPos[i]].Nome.indexOf('G5 LG') != -1)) {
+				haveCharger = true;
+
+				break;
+			}
+		}
+		
+		if(!haveCharger) {
+			var idProd;
+			var varIdProd;
+
+			for (var i = 0; i < produtosPos.length; i++) {
+				if(produtosObj[produtosPos[i]].Nome.indexOf('IPHONE') != -1 || 
+							produtosObj[produtosPos[i]].Nome.indexOf('IPAD') != -1) {
+					idProd = "68629";
+					varIdProd = produtosPos[i];
+
+					break;
+				} else {
+					idProd = "68624";
+					varIdProd = produtosPos[i];
+
+					break;
+				}
+			}
+
+			$.ajax({
+			    url: 'https://checkout.maisbaratostore.com.br/Produto/api/',
+			    type: "POST",
+			    data: {"ProdutoId":idProd,"StrOpcional":"Selecione","IsAssinatura":false,"DadosProduto":[{"ProdutoComboId":"0","ComboId":0,"ProdutoId":0,"Atributos":[],"Quantidade":"1","ListaPersonalizacoes":[]}]},
+			    success: function(result) {
+					$('#btQuero').find('.titleCarregador').addClass('selected_Text');
+					$('#btQuero').find('.priceRight').addClass('selected_Text');
+					$('#btQuero').find('.buttonOption').addClass('selected_Border');
+					$('#btQuero').find('.buttonOption').find('.buttonOptionInside').css('background-color', '#6A1685');
+					$('#btQuero').addClass('selected_Border');
+
+					$('#priceWant').text('R$ ' + result.Variantes[0].PrecoPor.toFixed(2).toString().replace('.',','));
+
+					$('#popupCarregador_Background').fadeIn(300);
+				},
+			    error: function() {
+			    	//do nothing
+			    }
+			});
+			
+		}
+		
+		var flag = false;
+
+		$('#confirmPopup').on('click', function() {
+
+			if($('#btQuero.btCarregador').find('.buttonOption').hasClass('selected_Border') && !flag) {
+				flag = true;
+				
+				var produtosPos = Fbits.Carrinho.ListaProdutos.split(';');
+				var produtosObj = Fbits.Carrinho.ProdutoVariante;
+
+				for (var i = 0; i < produtosPos.length; i++) {
+					if(produtosObj[produtosPos[i]].Nome.indexOf('IPHONE') != -1 || produtosObj[produtosPos[i]].Nome.indexOf('IPAD') != -1) {
+						$.ajax({
+						    url: 'https://checkout.maisbaratostore.com.br/Produto/ComprarProduto',
+						    type: "POST",
+						    data: {"ProdutoId":"68629","StrOpcional":"Selecione","IsAssinatura":false,"DadosProduto":[{"ProdutoComboId":"0","ComboId":0,"ProdutoId":0,"Atributos":[],"Quantidade":"1","ListaPersonalizacoes":[]}],"ListaServicos":[],"VerificarServico":false},
+						    success: function(result) {
+						    	if(result.resultadoCompra.StatusRequisicao === 0) {
+									atualizarCarrinho();
+									$('#popupCarregador_Background').fadeOut(350);
+								} else if (result.resultadoCompra.StatusRequisicao === 1) {
+									alert("Desculpe, não possuimos estoque do carregador.");
+									$('#popupCarregador_Background').fadeOut(350);
+								}
+							}
+						});
+
+					} else if(produtosObj[produtosPos[i]].Nome.indexOf('Samsung') != -1 || produtosObj[produtosPos[i]].Nome.indexOf('Motorola') != -1 || 
+									produtosObj[produtosPos[i]].Nome.indexOf('LG') != -1 || produtosObj[produtosPos[i]].Nome.indexOf('Nokia') != -1 || 
+									produtosObj[produtosPos[i]].Nome.indexOf('Sony') != -1) {
+						$.ajax({
+						    url: 'https://checkout.maisbaratostore.com.br/Produto/ComprarProduto',
+						    type: "POST",
+						    data: {"ProdutoId":"68624","StrOpcional":"Selecione","IsAssinatura":false,"DadosProduto":[{"ProdutoComboId":"0","ComboId":0,"ProdutoId":0,"Atributos":[],"Quantidade":"1","ListaPersonalizacoes":[]}],"ListaServicos":[],"VerificarServico":false},
+						    success: function(result) {
+						    	if(result.resultadoCompra.StatusRequisicao === 0) {
+									atualizarCarrinho();
+									$('#popupCarregador_Background').fadeOut(350);
+								} else if (result.resultadoCompra.StatusRequisicao === 1) {
+									alert("Desculpe, não possuimos estoque do carregador.");
+									$('#popupCarregador_Background').fadeOut(350);
+								}
+							}
+						});
+					}
+				}
+			} else {
+				$('#popupCarregador_Background').fadeOut(350);
+			}
+		});
+
+		$('#divCloseButton').on('click', function() {
+			$('#popupCarregador_Background').fadeOut(350);
+		});
+
+		$('.btCarregador').on('click', function() {
+			if($(this).attr('id') === 'btQuero') {
+				$(this).find('.titleCarregador').addClass('selected_Text');
+				$(this).find('.priceRight').addClass('selected_Text');
+				$(this).find('.buttonOption').addClass('selected_Border');
+				$(this).find('.buttonOption').find('.buttonOptionInside').css('background-color', '#6A1685');
+				$(this).addClass('selected_Border');
+
+				$('#btNaoQuero .titleCarregador').removeClass('selected_Text');
+				$('#btNaoQuero.btCarregador').removeClass('selected_Border');
+				$('#btNaoQuero.btCarregador').find('.buttonOption').removeClass('selected_Border');
+				$('#btNaoQuero.btCarregador').find('.buttonOption').find('.buttonOptionInside').css('background-color', '#FFFFFF');
+				$('#btNaoQuero .priceRight').removeClass('selected_Text');
+			} else {
+				$(this).find('.titleCarregador').addClass('selected_Text');
+				$(this).find('.priceRight').addClass('selected_Text');
+				$(this).find('.buttonOption').addClass('selected_Border');
+				$(this).find('.buttonOption').find('.buttonOptionInside').css('background-color', '#6A1685');
+				$(this).addClass('selected_Border');
+
+				$('#btQuero .titleCarregador').removeClass('selected_Text');
+				$('#btQuero.btCarregador').removeClass('selected_Border');
+				$('#btQuero.btCarregador').find('.buttonOption').removeClass('selected_Border');
+				$('#btQuero.btCarregador').find('.buttonOption').find('.buttonOptionInside').css('background-color', '#FFFFFF');
+				$('#btQuero .priceRight').removeClass('selected_Text');
+			}
+		});
+
+		function atualizarCarrinho() {
+			$.ajax({
+				url: 'https://checkout.maisbaratostore.com.br/Pedido/Atualizar',
+			    type: "POST",
+			    success: function(r) {
+			    	$('#divProdutos').html(r.viewProdutos);
+			    }
+			});
+		}
+	})();
+</script>

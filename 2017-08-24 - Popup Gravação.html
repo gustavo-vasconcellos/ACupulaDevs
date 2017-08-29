@@ -1,0 +1,311 @@
+<style type="text/css">
+#popupGravacao_Background {
+	display: none; 
+    position: fixed;
+    z-index: 2147483646;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+#popupGravacao_Conteudo {
+	color: #000000;
+    max-width: 65%;
+    min-width: 320px;
+    position: relative;
+    top: 13%;
+    margin: auto;
+    padding: 8px;
+    background-color: white;
+    color: rgba(0,0,0,0.4);
+    z-index: 2147483647;
+}
+#popupGravacaoBorder_Conteudo {
+    border: 1px solid #a09c9a;
+}
+#divCloseButton {
+    position: relative;
+    float: right;
+    top: -25px;
+    right: -25px;
+    background-color: #000000;
+    border-radius: 50%;
+    width: 37px;
+    height: 37px;
+}
+#closeButton {
+    display: block;
+    color: #FFFFFF;
+    font-size: 22pt;
+    text-align: center;
+    line-height: 30px;
+}
+#titlePopup {
+	background-color: #ededed;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    margin: 18px 0px 0px -9px;
+    padding: 20px 0px 20px 18px;
+    color: #000000;
+}
+#opcaoGravacao {
+	width: 60%;
+    margin: auto;
+    padding: 20px;
+}
+#comGravacao, #semGravacao {
+	width: 48%;
+    display: inline-block;
+    margin: auto;
+}
+#linhaPreta {
+	width: 90%;
+    margin: auto;
+    border-bottom: 1px solid #000000;
+    margin-bottom: 20px;
+}
+#titleTexto {
+	text-align: center;
+    margin: 20px;
+}
+#divGrav {
+	margin: auto;
+	width: 55%;
+}
+#gravacaoText, #limiteMaximo, #imgIlustrativa {
+	display: block;
+}
+#gravacaoText {
+    border-radius: 3px;
+    border: 2px solid #bebebe;
+    height: 45px;
+    line-height: 45px;
+    width: 95%;
+    margin: auto;
+    font-size: 14px;
+    font-style: italic;
+    padding-left: 15px;
+    color: #646464;
+}
+#limiteMaximo {
+    margin: 10px;	
+    font-size: 11px;
+}
+#confirmPopup {
+	width: 27%;
+    padding: 14px;
+    margin: 0px 10px 10px;
+    font-size: 14pt;
+    border: none;
+    color: #FFFFFF;
+    background-color: #0ab701;
+}
+#spanGravacaoFaca {
+    width: 50%;
+    height: 24px;
+    font-size: 20px;
+    color: #000000;
+    text-align: right;
+    position: relative;
+    top: 66px;
+    left: 97px;
+    margin-top: -31px;
+}
+#imgFaca {
+	display: block;
+	margin: auto;
+}
+#logoVargas {
+	margin-left: 45px;
+}
+.titleOpcao, #titleTexto {
+	font-size: 22px;
+	color: #000000;
+}
+.subTitleOpcao {
+	font-size: 12px;
+	color: #000000;
+}
+.buttonOption {
+    margin: 5px 12px 15px;
+    padding: 2px;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #FFFFFF;
+}
+.buttonOptionInside{
+	background-color: #FFFFFF;
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    margin: auto;
+}
+.selected {
+	background-color: #000000;
+}
+
+.right {
+	float: right;
+}
+.left {
+	float: left;
+}
+.clearfixPopup {
+	clear: both;
+}
+#divCloseButton:hover, .optionGrav:hover {
+	cursor: pointer;
+}
+</style>
+
+<div id="popupGravacao_Background">
+	<div id="popupGravacao_Conteudo">
+
+		<div id="divCloseButton">
+			<span id="closeButton">x</span>
+		</div>
+
+		<div id="popupGravacaoBorder_Conteudo">
+
+			<h1 id="titlePopup">PERSONALIZE SUA GRAVAÇÃO</h1>
+
+			<div id="opcaoGravacao">
+
+				<div id="comGravacao" class="optionGrav left">
+					<div class="buttonOption left"><div class="buttonOptionInside selected"></div></div>
+					<p class="titleOpcao">Com Gravação</p>
+					<p class="subTitleOpcao">Valor da Gravação: <span id="priceGrav">R$ 19,90</span></p>
+				</div>
+
+				<div id="semGravacao" class="optionGrav right">
+					<div class="buttonOption left"><div class="buttonOptionInside"></div></div>
+					<p class="titleOpcao">Sem Gravação</p>
+				</div>
+
+				<div class="clearfixPopup"></div>
+			</div>
+
+			<div id="linhaPreta" class="clearfixPopup"></div>
+
+			<h1 id="titleTexto">DIGITE O TEXTO ABAIXO</h1>
+
+			<div id="divGrav">
+				<input id="gravacaoText" type="text" maxlength="30">
+				<span id="limiteMaximo">* Limite máximo de 30 caracteres</span>
+			</div>
+
+			<div id="spanGravacaoFaca">Alberto dos Santos</div>
+			<img id="imgFaca" src="http://www.cutelariavargas.com.br/FILES/_ARQUIVOS/faca-popup.jpg"> <!-- Imagem Faca -->
+
+			<img id="logoVargas" src="http://www.cutelariavargas.com.br/FILES/_ARQUIVOS/logo-vargas-popup.png"> <!-- Logo Vargas -->
+
+			<button id="confirmPopup" title="Comprar" type="submit" class="btn-buy right">COMPRAR</button>
+
+			<div class="clearfixPopup"></div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	(function() {
+		$('#btn-buy').on('click', function() {
+			if($('[name="atributo12"]').val() === "" || $('[name="atributo7"]').val() === "") {
+
+				$('#popupGravacao_Background').fadeIn(300);
+
+				if($('[name="atributo12"]').size() !== 0) { //Gravação de graça
+
+					$('#gravacaoText').prop('name', 'atributo12');
+					$('#gravacaoText').prop('onchange', 'selectAttr(this,12);');
+					$('#gravacaoText').prop('title', 'TEXTO PARA SER GRAVADO GRáTIS');
+
+					$('#priceGrav').text('R$ 0,00');
+				} else if ($('[name="atributo7"]').size() !== 0) { //Gravação paga
+
+					$('#gravacaoText').prop('name', 'atributo7');
+					$('#gravacaoText').prop('onchange', 'selectAttr(this,7);');
+					$('#gravacaoText').prop('title', 'TEXTO PARA SER GRAVADO');
+				}
+
+				return false;
+			}
+		});
+
+		$('.optionGrav').on('click', function() {
+
+			$('.optionGrav').find('.buttonOption').find('.buttonOptionInside').removeClass('selected');
+			$(this).find('.buttonOption').find('.buttonOptionInside').addClass('selected');
+		});
+
+		$('#divCloseButton').on('click', function() {
+			$('#popupGravacao_Background').fadeOut(350);
+		});
+
+		$('#confirmPopup').on('click', function() {
+
+			if($('#comGravacao .buttonOption .buttonOptionInside').hasClass('selected') && $('#gravacaoText').val() !== "") {
+
+				$('#confirmPopup-menu').off('click');
+
+				if($('[name="atributo12"]').size() !== 0) { //Gravação de graça
+
+					ajaxCompraComGravacao('12-11'); //Gravação de graça
+				} else if ($('[name="atributo7"]').size() !== 0) { //Gravação paga
+
+					ajaxCompraComGravacao('7-2'); //gravação paga
+				}
+
+			} if($('#comGravacao .buttonOption .buttonOptionInside').hasClass('selected') && $('#gravacaoText').val() === "") {
+				$('#confirmPopup-menu').off('click', '**');
+				
+				alert('O texto de gravação não pode ser vazio.\nPor favor, inserir o texto no campo para ser gravado.');
+			} else if ($('#semGravacao .buttonOption .buttonOptionInside').hasClass('selected')) {	//Compra sem gravação
+
+				$.ajax({	
+					url: 'http://www.cutelariavargas.com.br/carrinho_adicionar.asp',
+					type: 'POST',
+					data: {
+						'produtoid': EZCOMMERCE_SCRIPTS_OBJECT.PRODUCT.CODE
+					},
+					success: function() {
+						window.location = 'http://www.cutelariavargas.com.br/meu-carrinho/';
+					}
+				});
+			}
+		});
+
+		$('#gravacaoText').on('keyup', function() {
+
+			if($(this).val() === "") {
+
+				$('#spanGravacaoFaca').text('Alberto dos Santos');
+			} else {
+
+				$('#spanGravacaoFaca').text($(this).val());
+			}
+		});
+
+		function ajaxCompraComGravacao(type) {
+
+			$.ajax({
+				url: 'http://www.cutelariavargas.com.br/carrinho_adicionar.asp',
+				type: 'POST',
+				data: {
+					'produtoid': EZCOMMERCE_SCRIPTS_OBJECT.PRODUCT.CODE,
+					'atributo7': $('#gravacaoText').val(),
+					'hdnpreco7': $('#priceGrav').text(),
+					'atributoespecial': type, //gravação paga
+				},
+				success: function() {
+					window.location = 'http://www.cutelariavargas.com.br/meu-carrinho/';
+				}
+			});
+		}
+	})();
+</script>

@@ -1,0 +1,167 @@
+<style>
+#blockRolagem {
+    display: none;
+    position: fixed;
+    top: 30%;
+    right: 0;
+    width: 220px;
+    z-index: 2147483647;
+}
+#conteinerRolagem {
+    clear: both;
+    display: block;
+    width: 200px;
+    background-color: #FFF;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 0 5px #888888;
+    padding: 10px;
+    text-transform: uppercase;
+}
+#conteinerRolagem p {
+    margin-bottom: 7px;
+}
+#precoDe_Var {
+    text-decoration: line-through;
+    font-size: 16px;
+}
+#precoPor_Var {
+    color: #fa5e5f;
+    font-size: 22px;
+    font-weight: 700;
+}
+#precoParcelas_Var {
+    font-size: 18px;
+    font-weight: bold;
+}
+#precoVista_Var {
+    font-size: 16px;
+    font-weight: bold;
+}
+#titleRolagem {
+    font-size: 14px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #DDD;
+}
+#botaoComprarRolagem {
+    width: 100%;
+    text-align: center;
+}
+#botaoComprarRolagem:after {
+    display: none;
+}
+#qntdParcelas_Var {
+    font-size: 14px;
+}
+#closeOpen {
+    background-color: #898989;
+    color: #FFFFFF;
+    padding: 5px;
+    float: right;
+    border-radius: 2px;
+}
+.closeRolagem {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 20px solid #FFFFFF;
+}
+.openRolagem {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent; 
+    border-right: 20px solid #FFFFFF; 
+}
+</style>
+
+<div id="blockRolagem">
+    <div id="closeOpen"><span class="closeRolagem"></span></div>
+    <div id="conteinerRolagem">
+        <p id="titleRolagem"></p>
+        <p id="precoDeRolagem">De: <span id="precoDe_Var"></span></p>
+        <p id="precoPorRolagem">Por: <span id="precoPor_Var"></span></p>
+        <p id="precoParcelaRolagem"><span id="qntdParcelas_Var"></span>X de <span id="precoParcelas_Var"></span> sem juros</p>
+        <p id="precoVistaRolagem">Ou: <span id="precoVista_Var"></span> à vista</p>
+        
+        <div class="clearfix"></div>
+
+        <div id="rolagemProdutoComprar" class="produto-comprar  acenter">
+            <a href="javascript:void(0)" id="botaoComprarRolagem" class="bt comprarProduto btn-comprar">Comprar <i class="icon iBigCart"></i></a>
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<script>
+    (function() {
+
+        $(window).scroll(function() {
+            var bottom_of_element = $(".produto-comprar.acenter").offset().top + $(".produto-comprar.acenter").outerHeight();
+            var top_of_screen = $(window).scrollTop();
+
+            if(top_of_screen < bottom_of_element){
+                $('#blockRolagem').fadeOut(250);
+            }
+            else {
+                $('#blockRolagem').fadeIn(350);
+            }
+        });
+        
+        $('')
+
+        $('#botaoComprarRolagem').click(function() {
+            comprarProduto($("[id^=produto-botao-comprar-]").parents('[id^="produto-item-"]'), true, $("[id^=produto-botao-comprar-]"), "botaoComprar");
+        });
+
+        $('#closeOpen').on('click', function() {
+            if($('#conteinerRolagem').css('display') != 'none') {
+                $('#closeOpen span').addClass('openRolagem');
+                $('#closeOpen span').removeClass('closeRolagem');
+
+                $('#conteinerRolagem').fadeOut(250);
+            } else {
+                $('#closeOpen span').addClass('closeRolagem');
+                $('#closeOpen span').removeClass('openRolagem');
+
+                $('#conteinerRolagem').fadeIn(250);
+            }
+        });
+
+        var title = $('.prodTitle.title').text();
+        var precoDe = $('.fbits-preco div.precoDe').text()
+        var precoPor = $('.fbits-preco div.precoPor.com-precoDe').text();
+
+        $('#titleRolagem').text(title);
+        $('#precoDe_Var').text(precoDe);
+        $('#precoPor_Var').text(precoPor);
+
+        if($('.fbits-preco div.precoVista .fbits-boleto-preco').text() === "") {
+            $('#precoVistaRolagem').hide();
+        } else {
+            var precoVista = $('.fbits-preco div.precoVista .fbits-boleto-preco').text();
+            $('#precoVista_Var').text(precoVista);
+        }
+
+        if($('.fbits-preco div.precoParcela span.fbits-quantidadeParcelas').text() !== '0') {
+            var precoParcela = $('.precoParcela .parcelavalor').text();
+            var qntdParcelas = $('.precoParcela .numeroparcelas').text();
+
+            $('#qntdParcelas_Var').text(qntdParcelas);
+            $('#precoParcelas_Var').text(precoParcela);
+
+        } else {
+            $('#precoParcelaRolagem').hide();
+        }
+    })();
+</script>
+
+
